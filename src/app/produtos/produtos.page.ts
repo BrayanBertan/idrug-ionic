@@ -11,6 +11,7 @@ import { Produto } from '../shared/produto';
 export class ProdutosPage implements OnInit {
 
   produtos:Produto[];
+  emptyList:String = "../../assets/note.png";
 
   constructor(
     private alertController: AlertController,
@@ -20,6 +21,7 @@ export class ProdutosPage implements OnInit {
   }
 
   ngOnInit() {
+    this.produtos = [];
   }
 
   async removeConfirm(produto:Produto){
@@ -41,8 +43,8 @@ export class ProdutosPage implements OnInit {
 
 
   remove(produto:Produto) {
-    this.produtoService.removeLivro(Produto).subscribe(
-      (value)=> this.refreshLivros(),
+    this.produtoService.removeProduto(produto).subscribe(
+      (value)=> this.refreshProdutos(),
       (error)=> {
         this.toastController.create({
           message: 'Não foi possivel excluir o produto',
@@ -55,7 +57,7 @@ export class ProdutosPage implements OnInit {
     );
   }
   refreshProdutos(){
-     this.produtoService.getLivros().subscribe(
+     this.produtoService.getProdutos().subscribe(
       (value)=> {
         this.produtos = value;
         console.log(this.produtos);

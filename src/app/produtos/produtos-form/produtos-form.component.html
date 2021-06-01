@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Cadastro de produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-avatar class="logo">
+    <img [src]="produtosForm.value.foto" />
+  </ion-avatar>
+  <form [formGroup]="produtosForm">
+      <ion-item>
+          <ion-label position="floating">Nome: </ion-label>
+          <ion-input formControlName="nome"
+                     type="text">
+          </ion-input>
+          <ion-text color="danger" *ngIf="nome.errors">
+            <small *ngIf="nome.errors.required && (nome.dirty || nome.touched)">
+                O campo nome é obrigatório
+            </small>
+            <small *ngIf="nome.errors.minlength && (nome.dirty || nome.touched)">
+                O campo nome deve conter no mínimo {{nome.errors.minlength.requiredLength}} caracteres
+            </small>
+            <small *ngIf="nome.errors.maxlength && (nome.dirty || nome.touched)">
+                O campo nome deve conter no máximo {{nome.errors.maxlength.requiredLength}} caracteres
+            </small>
+        </ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Descrião: </ion-label>
+        <ion-input formControlName="descricao"
+                   type="text">
+        </ion-input>
+        <ion-text color="danger" *ngIf="descricao.errors">
+          <small *ngIf="descricao.errors.required && (descricao.dirty || descricao.touched)">
+              O campo descrição é obrigatório
+          </small>
+        </ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Categorias</ion-label>
+        <ion-select formControlName="categoria"
+                    ok-text="Ok"
+                    cancel-text="Cancelar"
+                   >
+          <ion-select-option *ngFor="let categoria of categorias"
+                             [value]="categoria">
+            {{categoria}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Volume: </ion-label>
+        <ion-input formControlName="volume"
+                   type="text">
+        </ion-input>
+        <ion-text color="danger" *ngIf="volume.errors">
+          <small *ngIf="volume.errors.required && (volume.dirty || preco.touched)">
+              O campo volume é obrigatório
+          </small>
+        </ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Unidades</ion-label>
+        <ion-select formControlName="unidade"
+                    ok-text="Ok"
+                    cancel-text="Cancelar"
+                   >
+          <ion-select-option *ngFor="let unidade of unidades"
+                             [value]="unidade">
+            {{unidade}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Preço: </ion-label>
+        <ion-input formControlName="preco"
+                   type="text">
+        </ion-input>
+        <ion-text color="danger" *ngIf="preco.errors">
+          <small *ngIf="preco.errors.required && (preco.dirty || preco.touched)">
+              O campo preço é obrigatório
+          </small>
+        </ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Estoque: </ion-label>
+        <ion-input formControlName="estoque"
+                   type="number">
+        </ion-input>
+        <ion-text color="danger" *ngIf="estoque.errors">
+          <small *ngIf="estoque.errors.required && (estoque.dirty || preco.touched)">
+              O campo estoque é obrigatório
+          </small>
+        </ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Foto: </ion-label>
+        <ion-input formControlName="foto"
+                   type="text">
+        </ion-input>
+        <ion-text color="danger" *ngIf="foto.errors">
+          <small *ngIf="foto.errors.required && (foto.dirty || foto.touched)">
+              O campo foto é obrigatório
+          </small>
+        </ion-text>
+      </ion-item>
+
+
+
+
+      <ion-fab vertical="bottom"
+               horizontal="end">
+          <ion-fab-button (click)="salvar()" [disabled]="!produtosForm.valid">
+              <ion-icon name="checkmark-outline"></ion-icon>
+          </ion-fab-button>
+      </ion-fab>
+  </form>
+</ion-content>

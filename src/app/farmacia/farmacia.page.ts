@@ -79,7 +79,9 @@ export class FarmaciaPage implements OnInit {
         Validators.required
       ]),
 
-      celular: new FormControl(farmacia.celular),
+      celular: new FormControl(farmacia.celular, [
+        Validators.required
+      ]),
 
       email: new FormControl(farmacia.email, [
         Validators.required

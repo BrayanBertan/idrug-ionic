@@ -11,5 +11,29 @@
       "cnpj": "9999999999999",
       "id": 1
     }
+  ],
+  "produtos": [
+    {
+      "nome": "wed editado",
+      "descricao": "dssdsd",
+      "categoria": "Analgésico",
+      "preco": "5",
+      "volume": "55",
+      "unidade": "Gotas",
+      "estoque": 5,
+      "foto": "../../assets/produtos.png",
+      "id": 1
+    },
+    {
+      "nome": "asddddddddddddd",
+      "descricao": "asdddddddddddddddddddddddd",
+      "categoria": "Relaxante Muscular",
+      "preco": 0,
+      "volume": "0",
+      "unidade": "Comprimido",
+      "estoque": 0,
+      "foto": "../../assets/produtos.png",
+      "id": 2
+    }
   ]
 }
