@@ -20,7 +20,7 @@ export class FarmaciaService {
   }
 
   atualizar(Farmacia: Farmacia) {
-  return this.httpCliente.put(this.url,Farmacia);
+  return this.httpCliente.put(`${this.url}/1`,Farmacia);
 
   }
 

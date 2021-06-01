@@ -1,0 +1,15 @@
+{
+  "farmacia": [
+    {
+      "nome": "Farmacia teste",
+      "sobre": "Uma Farmacia",
+      "endereco": "Rua tal",
+      "telefone": "34349999",
+      "celular": "48999999999",
+      "email": "farmacia@gmail.com",
+      "logo": "https://img2.gratispng.com/20180331/yzq/kisspng-pharmacy-logo-pharmacist-pharmaceutical-drug-pharmacy-5abf3058c52fd8.1225652515224791928077.jpg",
+      "cnpj": "9999999999999",
+      "id": 1
+    }
+  ]
+}

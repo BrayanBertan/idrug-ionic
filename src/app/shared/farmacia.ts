@@ -1,6 +1,6 @@
 export class Farmacia {
 
-  id:number;
+
   nome: String;
   sobre:String;
   endereco:String;
@@ -11,8 +11,7 @@ export class Farmacia {
   cnpj:String;
 
 
-  constructor(id:number,nome:String,sobre:String,endereco:String,telefone:String,celular:String,email:String,logo:String,cnpj:String) {
-      this.id = id;
+  constructor(nome:String,sobre:String,endereco:String,telefone:String,celular:String,email:String,logo:String,cnpj:String) {
       this.sobre = sobre;
       this.endereco = endereco;
       this.telefone = telefone;
