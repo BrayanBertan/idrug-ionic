@@ -133,7 +133,7 @@ export class ProdutosFormComponent implements OnInit {
   salvar() {
     const produto = {...this.produtosForm.value, id: this.produtoId}
     this.produtoService.salvar(produto).subscribe(
-      value => this.router.navigate(['produtos']),
+      value => this.router.navigate(['tabs/produtos']),
       erro => {
         console.error(erro);
         this.toastController.create({

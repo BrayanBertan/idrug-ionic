@@ -34,6 +34,39 @@
       "estoque": 0,
       "foto": "../../assets/produtos.png",
       "id": 2
+    },
+    {
+      "nome": "sad",
+      "descricao": "asd",
+      "categoria": "Relaxante Muscular",
+      "preco": 0,
+      "volume": "0",
+      "unidade": "Comprimido",
+      "estoque": 0,
+      "foto": "../../assets/produtos.png",
+      "id": 3
+    },
+    {
+      "nome": "sadsad",
+      "descricao": "asdsadsad",
+      "categoria": "Relaxante Muscular",
+      "preco": 0,
+      "volume": "0",
+      "unidade": "Comprimido",
+      "estoque": 0,
+      "foto": "../../assets/produtos.png",
+      "id": 4
+    },
+    {
+      "nome": "adadasd",
+      "descricao": "adadssdsd",
+      "categoria": "Relaxante Muscular",
+      "preco": 0,
+      "volume": "0",
+      "unidade": "Comprimido",
+      "estoque": 0,
+      "foto": "../../assets/produtos.png",
+      "id": 5
     }
   ]
 }
