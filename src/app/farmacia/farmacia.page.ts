@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastController } from '@ionic/angular';
 import { Farmacia } from './../shared/Farmacia';
+import { ModoPagamento } from '../shared/modo-pagamento';
 
 @Component({
   selector: 'app-farmacia',
@@ -13,6 +14,13 @@ export class FarmaciaPage implements OnInit {
 
   farmaciaId: number;
   farmaciasForm: FormGroup;
+
+  modos_pagamento = [
+    new ModoPagamento('Cartão de credito',true,'../../assets/credit-card.png'),
+    new ModoPagamento('Cartão de debito',false,'../../assets/debit-card.png' ),
+    new ModoPagamento('Boleto',true,'../../assets/barcode.png'),
+    new ModoPagamento('Pix',false,'../../assets/pix.png')
+  ];
   constructor(
     private toastController: ToastController,
     private farmaciaService: FarmaciaService,
@@ -26,7 +34,8 @@ export class FarmaciaPage implements OnInit {
       celular:"",
       email:"",
       logo:"https://img2.gratispng.com/20180331/yzq/kisspng-pharmacy-logo-pharmacist-pharmaceutical-drug-pharmacy-5abf3058c52fd8.1225652515224791928077.jpg",
-      cnpj:""
+      cnpj:"",
+      aceitos:[]
     };
     this.initializaFormulario(farmacia);
 
@@ -98,7 +107,7 @@ export class FarmaciaPage implements OnInit {
   ngOnInit() {
       this.farmaciaService
         .getFarmacia()
-        .subscribe((farmacia) => this.initializaFormulario(farmacia[0])
+        .subscribe((farmacia) => {this.initializaFormulario(farmacia[0]);this.modos_pagamento = farmacia[0].aceitos}
         );
 
 
@@ -106,7 +115,7 @@ export class FarmaciaPage implements OnInit {
 
 
   salvar() {
-    const farmacia = this.farmaciasForm.value
+    const farmacia = {...this.farmaciasForm.value,aceitos:this.modos_pagamento};
     this.farmaciaService.atualizar(farmacia).subscribe(
       value => {
         this.toastController.create({

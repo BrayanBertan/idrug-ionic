@@ -9,6 +9,28 @@
       "email": "farmacia@gmail.com",
       "logo": "https://img2.gratispng.com/20180331/yzq/kisspng-pharmacy-logo-pharmacist-pharmaceutical-drug-pharmacy-5abf3058c52fd8.1225652515224791928077.jpg",
       "cnpj": "9999999999999",
+      "aceitos": [
+        {
+          "val": "Cartão de credito",
+          "isChecked": true,
+          "logo": "../../assets/credit-card.png"
+        },
+        {
+          "val": "Cartão de debito",
+          "isChecked": false,
+          "logo": "../../assets/debit-card.png"
+        },
+        {
+          "val": "Boleto",
+          "isChecked": true,
+          "logo": "../../assets/barcode.png"
+        },
+        {
+          "val": "Pix",
+          "isChecked": false,
+          "logo": "../../assets/pix.png"
+        }
+      ],
       "id": 1
     }
   ],

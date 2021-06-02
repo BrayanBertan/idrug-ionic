@@ -7,112 +7,140 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-avatar class="logo">
-    <img [src]="farmaciasForm.value.logo" />
-  </ion-avatar>
-  <form [formGroup]="farmaciasForm">
-      <ion-item>
-          <ion-label position="floating">Nome: </ion-label>
-          <ion-input formControlName="nome"
-                     type="text">
-          </ion-input>
-          <ion-text color="danger" *ngIf="nome.errors">
-            <small *ngIf="nome.errors.required && (nome.dirty || nome.touched)">
-                O campo nome é obrigatório
-            </small>
-            <small *ngIf="nome.errors.minlength && (nome.dirty || nome.touched)">
-                O campo nome deve conter no mínimo {{nome.errors.minlength.requiredLength}} caracteres
-            </small>
-            <small *ngIf="nome.errors.maxlength && (nome.dirty || nome.touched)">
-                O campo nome deve conter no máximo {{nome.errors.maxlength.requiredLength}} caracteres
-            </small>
-        </ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Sobre: </ion-label>
-        <ion-input formControlName="sobre"
-                   type="text">
-        </ion-input>
-        <ion-text color="danger" *ngIf="sobre.errors">
-          <small *ngIf="sobre.errors.required && (sobre.dirty || sobre.touched)">
-              O campo sobre é obrigatório
-          </small>
-        </ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Endereço: </ion-label>
-        <ion-input formControlName="endereco"
-                   type="text">
-        </ion-input>
-        <ion-text color="danger" *ngIf="endereco.errors">
-          <small *ngIf="endereco.errors.required && (endereco.dirty || endereco.touched)">
-              O campo endereço é obrigatório
-          </small>
-        </ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Telefone: </ion-label>
-        <ion-input formControlName="telefone"
-                   type="text">
-        </ion-input>
-        <ion-text color="danger" *ngIf="telefone.errors">
-          <small *ngIf="telefone.errors.required && (telefone.dirty || telefone.touched)">
-              O campo telefone é obrigatório
-          </small>
-        </ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Celular: </ion-label>
-        <ion-input formControlName="celular"
-                   type="text">
-        </ion-input>
-        <ion-text color="danger" *ngIf="celular.errors">
-          <small *ngIf="celular.errors.required && (celular.dirty || celular.touched)">
-              O campo celular é obrigatório
-          </small>
-        </ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Email: </ion-label>
-        <ion-input formControlName="email"
-                   type="text">
-        </ion-input>
-        <ion-text color="danger" *ngIf="email.errors">
-          <small *ngIf="email.errors.required && (email.dirty || email.touched)">
-              O campo email é obrigatório
-          </small>
-        </ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Logo: </ion-label>
-        <ion-input formControlName="logo"
-                   type="text">
-        </ion-input>
-        <ion-text color="danger" *ngIf="logo.errors">
-          <small *ngIf="logo.errors.required && (logo.dirty || logo.touched)">
-              O campo logo é obrigatório
-          </small>
-        </ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Cnpj: </ion-label>
-        <ion-input formControlName="cnpj"
-                   type="text">
-        </ion-input>
-        <ion-text color="danger" *ngIf="cnpj.errors">
-          <small *ngIf="cnpj.errors.required && (cnpj.dirty || cnpj.touched)">
-              O campo cnpj é obrigatório
-          </small>
-        </ion-text>
-      </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3">
+          <img class="logo" [src]="farmaciasForm.value.logo"/>
+      </ion-col>
+      <ion-col size="9">
 
+        <form [formGroup]="farmaciasForm">
+            <ion-item>
+                <ion-label position="floating">Nome: </ion-label>
+                <ion-input formControlName="nome"
+                           type="text">
+                </ion-input>
+                <ion-text color="danger" *ngIf="nome.errors">
+                  <small *ngIf="nome.errors.required && (nome.dirty || nome.touched)">
+                      O campo nome é obrigatório
+                  </small>
+                  <small *ngIf="nome.errors.minlength && (nome.dirty || nome.touched)">
+                      O campo nome deve conter no mínimo {{nome.errors.minlength.requiredLength}} caracteres
+                  </small>
+                  <small *ngIf="nome.errors.maxlength && (nome.dirty || nome.touched)">
+                      O campo nome deve conter no máximo {{nome.errors.maxlength.requiredLength}} caracteres
+                  </small>
+              </ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Sobre: </ion-label>
+              <ion-input formControlName="sobre"
+                         type="text">
+              </ion-input>
+              <ion-text color="danger" *ngIf="sobre.errors">
+                <small *ngIf="sobre.errors.required && (sobre.dirty || sobre.touched)">
+                    O campo sobre é obrigatório
+                </small>
+              </ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Endereço: </ion-label>
+              <ion-input formControlName="endereco"
+                         type="text">
+              </ion-input>
+              <ion-text color="danger" *ngIf="endereco.errors">
+                <small *ngIf="endereco.errors.required && (endereco.dirty || endereco.touched)">
+                    O campo endereço é obrigatório
+                </small>
+              </ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Telefone: </ion-label>
+              <ion-input formControlName="telefone"
+                         type="text">
+              </ion-input>
+              <ion-text color="danger" *ngIf="telefone.errors">
+                <small *ngIf="telefone.errors.required && (telefone.dirty || telefone.touched)">
+                    O campo telefone é obrigatório
+                </small>
+              </ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Celular: </ion-label>
+              <ion-input formControlName="celular"
+                         type="text">
+              </ion-input>
+              <ion-text color="danger" *ngIf="celular.errors">
+                <small *ngIf="celular.errors.required && (celular.dirty || celular.touched)">
+                    O campo celular é obrigatório
+                </small>
+              </ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Email: </ion-label>
+              <ion-input formControlName="email"
+                         type="text">
+              </ion-input>
+              <ion-text color="danger" *ngIf="email.errors">
+                <small *ngIf="email.errors.required && (email.dirty || email.touched)">
+                    O campo email é obrigatório
+                </small>
+              </ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Logo: </ion-label>
+              <ion-input formControlName="logo"
+                         type="text">
+              </ion-input>
+              <ion-text color="danger" *ngIf="logo.errors">
+                <small *ngIf="logo.errors.required && (logo.dirty || logo.touched)">
+                    O campo logo é obrigatório
+                </small>
+              </ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Cnpj: </ion-label>
+              <ion-input formControlName="cnpj"
+                         type="text">
+              </ion-input>
+              <ion-text color="danger" *ngIf="cnpj.errors">
+                <small *ngIf="cnpj.errors.required && (cnpj.dirty || cnpj.touched)">
+                    O campo cnpj é obrigatório
+                </small>
+              </ion-text>
+            </ion-item>
+            <ion-fab vertical="bottom"
+                     horizontal="end">
+                <ion-fab-button (click)="salvar()" [disabled]="!farmaciasForm.valid">
+                    <ion-icon name="checkmark-outline"></ion-icon>
+                </ion-fab-button>
+            </ion-fab>
+        </form>
 
+      </ion-col>
+    </ion-row>
+    <h2 style="text-align: center;">Modos de pagamento aceitos:</h2>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col size="2" *ngFor="let modo_pagamento of modos_pagamento">
+        <div class="modoPagamentoRow">
+          <ion-row>
+            <ion-col size="12">
+              <strong>{{modo_pagamento.val}}</strong>
+            </ion-col>
+          </ion-row>
+          <ion-row >
+            <ion-col size="6">
+              <img  class="logoModoPagamento" [src]="modo_pagamento.logo" />
+            </ion-col>
+            <ion-col size="4">
+              <ion-checkbox  [(ngModel)]="modo_pagamento.isChecked"></ion-checkbox>
+            </ion-col>
+          </ion-row>
+        </div>
 
-      <ion-fab vertical="bottom"
-               horizontal="end">
-          <ion-fab-button (click)="salvar()" [disabled]="!farmaciasForm.valid">
-              <ion-icon name="checkmark-outline"></ion-icon>
-          </ion-fab-button>
-      </ion-fab>
-  </form>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+      </ion-row>
+  </ion-grid>
 </ion-content>
