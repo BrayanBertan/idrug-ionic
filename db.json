@@ -88,7 +88,35 @@
       "unidade": "Comprimido",
       "estoque": 0,
       "foto": "../../assets/produtos.png",
+      "permissoes": {
+        "farmacia": false,
+        "produtos": false,
+        "pedidos": false,
+        "logs": false
+      },
       "id": 5
+    }
+  ],
+  "usuarios": [
+    {
+      "nome": "111111",
+      "usuario": "111111",
+      "senha": "111111",
+      "foto": "https://www.pngjoy.com/pngm/136/2750635_gray-circle-login-user-icon-png-transparent-png.png",
+      "id": 1
+    },
+    {
+      "nome": "222222222222",
+      "usuario": "33333",
+      "senha": "3333",
+      "foto": "https://www.pngjoy.com/pngm/136/2750635_gray-circle-login-user-icon-png-transparent-png.png",
+      "permissoes": {
+        "farmacia": false,
+        "produtos": false,
+        "pedidos": false,
+        "logs": false
+      },
+      "id": 2
     }
   ]
 }

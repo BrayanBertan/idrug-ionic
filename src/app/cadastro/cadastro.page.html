@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Cadastro de usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-avatar class="logo">
+    <img [src]="cadastroForm.value.foto" />
+  </ion-avatar>
+  <form [formGroup]="cadastroForm">
+      <ion-item>
+          <ion-label position="floating">Nome: </ion-label>
+          <ion-input formControlName="nome"
+                     type="text">
+          </ion-input>
+          <ion-text color="danger" *ngIf="nome.errors">
+            <small *ngIf="nome.errors.required && (nome.dirty || nome.touched)">
+                O campo nome é obrigatório
+            </small>
+            <small *ngIf="nome.errors.minlength && (nome.dirty || nome.touched)">
+                O campo nome deve conter no mínimo {{nome.errors.minlength.requiredLength}} caracteres
+            </small>
+            <small *ngIf="nome.errors.maxlength && (nome.dirty || nome.touched)">
+                O campo nome deve conter no máximo {{nome.errors.maxlength.requiredLength}} caracteres
+            </small>
+        </ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Usuario: </ion-label>
+        <ion-input formControlName="usuario"
+                   type="text">
+        </ion-input>
+        <ion-text color="danger" *ngIf="usuario.errors">
+          <small *ngIf="usuario.errors.required && (usuario.dirty || usuario.touched)">
+              O campo usuario é obrigatório
+          </small>
+          <small *ngIf="usuario.errors.minlength && (usuario.dirty || usuario.touched)">
+              O campo usuario deve conter no mínimo {{usuario.errors.minlength.requiredLength}} caracteres
+          </small>
+          <small *ngIf="usuario.errors.maxlength && (usuario.dirty || usuario.touched)">
+              O campo usuario deve conter no máximo {{usuario.errors.maxlength.requiredLength}} caracteres
+          </small>
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Senha: </ion-label>
+      <ion-input formControlName="senha"
+                 type="text">
+      </ion-input>
+      <ion-text color="danger" *ngIf="senha.errors">
+        <small *ngIf="senha.errors.required && (senha.dirty || senha.touched)">
+            O campo senha é obrigatório
+        </small>
+        <small *ngIf="senha.errors.minlength && (senha.dirty || senha.touched)">
+            O campo senha deve conter no mínimo {{senha.errors.minlength.requiredLength}} caracteres
+        </small>
+        <small *ngIf="senha.errors.maxlength && (senha.dirty || senha.touched)">
+            O campo senha deve conter no máximo {{senha.errors.maxlength.requiredLength}} caracteres
+        </small>
+    </ion-text>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Foto: </ion-label>
+    <ion-input formControlName="foto"
+               type="text">
+    </ion-input>
+    <ion-text color="danger" *ngIf="foto.errors">
+      <small *ngIf="foto.errors.required && (foto.dirty || foto.touched)">
+          O campo foto é obrigatório
+      </small>
+  </ion-text>
+  </ion-item>
+  <ion-fab vertical="bottom"
+            horizontal="end">
+      <ion-fab-button (click)="salvar()" [disabled]="!cadastroForm.valid">
+          <ion-icon name="checkmark-outline"></ion-icon>
+      </ion-fab-button>
+  </ion-fab>
+  </form><br>
+  <a [routerLink] = "['login']">Já possui uma conta?</a>
+</ion-content>

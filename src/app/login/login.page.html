@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4"></ion-col>
+      <ion-col size="4">
+        <form [formGroup]="loginForm">
+          <ion-item>
+            <ion-label position="floating">Usuario: </ion-label>
+            <ion-input formControlName="usuario"
+                       type="text">
+            </ion-input>
+            <ion-text color="danger" *ngIf="usuario.errors">
+              <small *ngIf="usuario.errors.required && (usuario.dirty || usuario.touched)">
+                  O campo usuario é obrigatório
+              </small>
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Senha: </ion-label>
+          <ion-input formControlName="senha"
+                     type="text">
+          </ion-input>
+          <ion-text color="danger" *ngIf="senha.errors">
+            <small *ngIf="senha.errors.required && (senha.dirty || senha.touched)">
+                O campo senha é obrigatório
+            </small>
+        </ion-text>
+      </ion-item>
+      <ion-fab vertical="bottom"
+                horizontal="end">
+          <ion-fab-button (click)="login()" [disabled]="!loginForm.valid">
+              <ion-icon name="checkmark-outline"></ion-icon>
+          </ion-fab-button>
+      </ion-fab>
+      </form><br>
+      <a [routerLink] = "['cadastro']">Ainda não possui uma conta?</a>
+      </ion-col>
+      <ion-col size="4"></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
