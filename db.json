@@ -118,5 +118,23 @@
       },
       "id": 2
     }
+  ],
+  "pedidos": [
+    {
+      "id": 1,
+      "usuario": "Kyo",
+      "modo_pagamento": "Boleto",
+      "endereco": "Rua tal",
+      "status": 1,
+      "itens": [
+        {
+          "id": 1,
+          "pedido":1,
+          "produto":2,
+          "quantidade":5,
+          "preco_unitario":8
+        }
+      ]
+    }
   ]
 }

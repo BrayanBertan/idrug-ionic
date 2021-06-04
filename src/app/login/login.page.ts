@@ -70,8 +70,10 @@ export class LoginPage implements OnInit {
             color: 'danger'
           }).then(t => t.present());
         }
-        else
-        this.router.navigate(['']);
+        else{
+          this.loginService.setUsuario(usuario);
+          this.router.navigate(['']);
+        }
       },
       erro => {
         console.error(erro);

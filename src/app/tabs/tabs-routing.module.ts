@@ -17,6 +17,10 @@ const routes: Routes = [
         loadChildren: () => import('../produtos/produtos.module').then(m => m.ProdutosPageModule)
       },
       {
+        path: 'pedidos',
+        loadChildren: () => import('../pedidos/pedidos.module').then(m => m.PedidosPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/farmacia',
         pathMatch: 'full'

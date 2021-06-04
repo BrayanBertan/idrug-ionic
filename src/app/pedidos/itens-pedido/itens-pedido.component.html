@@ -1,0 +1,10 @@
+<ion-list *ngFor="let item of itens">
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img [src]="item.foto" />
+        </ion-thumbnail>
+        <ion-label> <h3>Produto: {{item.nome}}</h3></ion-label>
+        <ion-label> <h3>Quantidade: {{item.quantidade}}</h3></ion-label>
+        <ion-label> <h3>Valor Unitario: {{item.preco_unitario | currency:'BRL'}}</h3></ion-label>
+      </ion-item>
+  </ion-list>

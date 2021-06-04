@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastController } from '@ionic/angular';
 import { Farmacia } from './../shared/Farmacia';
 import { ModoPagamento } from '../shared/modo-pagamento';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-farmacia',
@@ -24,6 +25,7 @@ export class FarmaciaPage implements OnInit {
   constructor(
     private toastController: ToastController,
     private farmaciaService: FarmaciaService,
+    private router:Router
   ) {
 
     let farmacia={
@@ -40,6 +42,7 @@ export class FarmaciaPage implements OnInit {
     this.initializaFormulario(farmacia);
 
   }
+
 
 
   get nome() {

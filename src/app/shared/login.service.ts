@@ -31,11 +31,9 @@ export class LoginService {
   }
 
   public isAuth():boolean{
-    if(this.usuario != null){
-      return  true;
-    }else{
+    if(this.usuario == null)
       return  false;
-    }
+    return  true;
 }
 
 

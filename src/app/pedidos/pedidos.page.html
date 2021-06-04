@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pedidos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="empty"   *ngIf="pedidos.length == 0">
+    <ion-avatar>
+      <img [src]="emptyList" />
+    </ion-avatar>
+    <ion-label>Sem pedidos cadastrados!</ion-label>
+  </div>
+  <ion-grid *ngIf="pedidos.length != 0">
+    <ion-row>
+      <ion-col size="3" *ngFor="let pedido of pedidos">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Cliente: {{pedido.usuario}}</ion-card-subtitle>
+            <ion-card-title>Número do pedido {{pedido.id}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>Total: R${{pedido.total}} Modo de pagamento: {{pedido.modo_pagamento}}</p>
+            <ion-list>
+              <ion-radio-group  [value]="pedido.status">
+                <ion-list-header>
+                  <ion-label>
+                   Status do pedido
+                  </ion-label>
+                </ion-list-header>
+
+                <ion-item>
+                  <ion-label>pendente</ion-label>
+                  <ion-radio value="0"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>em preparação</ion-label>
+                  <ion-radio value="1"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>enviado</ion-label>
+                  <ion-radio value="2"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>entregue</ion-label>
+                  <ion-radio value="3" disabled></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-list>
+            <ion-button  style="margin: auto;" (click)="itensModal(pedido.itens)" expand="block"  shape="round">
+             Itens do pedido
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
