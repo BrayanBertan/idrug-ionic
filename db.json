@@ -107,7 +107,7 @@
         "farmacia": true,
         "produtos": true,
         "pedidos": true,
-        "logs": true,
+        "logs": false,
         "permissoes": true
       },
       "id": 1
@@ -119,7 +119,7 @@
       "foto": "https://www.pngjoy.com/pngm/136/2750635_gray-circle-login-user-icon-png-transparent-png.png",
       "permissoes": {
         "farmacia": true,
-        "produtos": true,
+        "produtos": false,
         "pedidos": false,
         "logs": true,
         "permissoes": false

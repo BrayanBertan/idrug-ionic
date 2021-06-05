@@ -21,10 +21,6 @@ const routes: Routes = [
     loadChildren: () => import('./pedidos/pedidos.module').then( m => m.PedidosPageModule)
   },
   {
-    path: 'logs',
-    loadChildren: () => import('./logs/logs.module').then( m => m.LogsPageModule)
-  },
-  {
     path: 'permissoes',
     loadChildren: () => import('./permissoes/permissoes.module').then( m => m.PermissoesPageModule)
   }
