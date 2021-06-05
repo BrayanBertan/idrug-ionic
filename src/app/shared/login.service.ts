@@ -55,8 +55,8 @@ export class LoginService {
   }
 
   atualizar(usuario: Usuario) {
-  return this.httpCliente.put(`${this.url}/${usuario.id}`,usuario);
-
+    this.usuario = usuario;
+    return this.httpCliente.put(`${this.url}/${usuario.id}`,usuario);
   }
 
   salvar(usuario: Usuario){
