@@ -22,7 +22,7 @@
           <ion-card-content>
             <p>Total: R${{pedido.total}} Modo de pagamento: {{pedido.modo_pagamento}}</p>
             <ion-list>
-              <ion-radio-group  [value]="pedido.status">
+              <ion-radio-group  [value]="pedido.status" (ionChange)="changeStatus(pedido,$event.detail.value)">
                 <ion-list-header>
                   <ion-label>
                    Status do pedido

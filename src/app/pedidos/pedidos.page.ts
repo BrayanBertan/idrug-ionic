@@ -1,8 +1,8 @@
+import { Pedidos } from './../shared/pedidos';
 import { ProdutoService } from './../shared/produto.service';
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController, ToastController } from '@ionic/angular';
 import { Item } from '../shared/item';
-import { Pedidos } from '../shared/pedidos';
 import { PedidosService } from '../shared/pedidos.service';
 import { ItensPedidoComponent } from './itens-pedido/itens-pedido.component';
 
@@ -75,6 +75,30 @@ export class PedidosPage implements OnInit {
       (error)=> console.error(error),
     );
     console.log(this.pedidos);
+  }
+
+  changeStatus(pedido:Pedidos,status:number){
+    pedido.status = status;
+    this.pedidoService.atualizar(pedido).subscribe(
+      value => {
+        this.toastController.create({
+          message: `O status do pedido ${pedido.id} foi atualizado com sucesso para ${this.status[pedido.status]}`,
+          duration: 1500,
+          keyboardClose: true,
+          color: 'success'
+        }).then(t => t.present());
+      },
+      erro => {
+        console.error(erro);
+        this.toastController.create({
+          message: `Não foi possível salvar o novo status do pedido ${pedido.id}`,
+          duration: 5000,
+          keyboardClose: true,
+          color: 'danger'
+        }).then(t => t.present());
+      }
+   );
+    this.refreshPedidos();
   }
 
   ionViewWillEnter(){

@@ -103,6 +103,13 @@
       "usuario": "111111",
       "senha": "111111",
       "foto": "https://www.pngjoy.com/pngm/136/2750635_gray-circle-login-user-icon-png-transparent-png.png",
+      "permissoes": {
+        "farmacia": true,
+        "produtos": true,
+        "pedidos": true,
+        "logs": true,
+        "permissoes": true
+      },
       "id": 1
     },
     {
@@ -111,10 +118,11 @@
       "senha": "3333",
       "foto": "https://www.pngjoy.com/pngm/136/2750635_gray-circle-login-user-icon-png-transparent-png.png",
       "permissoes": {
-        "farmacia": false,
-        "produtos": false,
+        "farmacia": true,
+        "produtos": true,
         "pedidos": false,
-        "logs": false
+        "logs": true,
+        "permissoes": false
       },
       "id": 2
     }
@@ -125,16 +133,19 @@
       "usuario": "Kyo",
       "modo_pagamento": "Boleto",
       "endereco": "Rua tal",
-      "status": 1,
+      "status": "0",
       "itens": [
         {
           "id": 1,
-          "pedido":1,
-          "produto":2,
-          "quantidade":5,
-          "preco_unitario":8
+          "pedido": 1,
+          "produto": 2,
+          "quantidade": 5,
+          "preco_unitario": 8,
+          "foto": "../../assets/produtos.png",
+          "nome": "asddddddddddddd"
         }
-      ]
+      ],
+      "total": 40
     }
   ]
 }

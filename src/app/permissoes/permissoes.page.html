@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Permissões</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="empty"   *ngIf="usuarios.length == 0">
+    <ion-avatar>
+      <img [src]="emptyList" />
+    </ion-avatar>
+    <ion-label>Sem usuarios cadastrados!</ion-label>
+  </div>
+  <ion-grid *ngIf="usuarios.length != 0">
+    <ion-row>
+      <ion-col size="3" *ngFor="let usuario of usuarios">
+        <ion-card>
+          <img class="usuarioFoto" [src]="usuario.foto" />
+          <ion-card-header>
+            <ion-card-title>Funcionario: {{usuario.nome}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-item>
+                <strong>Farmacia</strong>
+                <ion-checkbox (ionChange)="atualizarUsuario(usuario)" slot="end" [(ngModel)]="usuario.permissoes.farmacia"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <strong>Logs</strong>
+                <ion-checkbox (ionChange)="atualizarUsuario(usuario)"  slot="end" [(ngModel)]="usuario.permissoes.logs"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <strong>Pedidos</strong>
+                <ion-checkbox (ionChange)="atualizarUsuario(usuario)"  slot="end" [(ngModel)]="usuario.permissoes.pedidos"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <strong>Permissões</strong>
+                <ion-checkbox (ionChange)="atualizarUsuario(usuario)"  slot="end" [(ngModel)]="usuario.permissoes.permissoes"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <strong>Produtos</strong>
+                <ion-checkbox (ionChange)="atualizarUsuario(usuario)"  slot="end" [(ngModel)]="usuario.permissoes.produtos"></ion-checkbox>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
