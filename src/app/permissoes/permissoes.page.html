@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar  color="primary">
     <ion-title>Permissões</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -24,10 +24,6 @@
               <ion-item>
                 <strong>Farmacia</strong>
                 <ion-checkbox (ionChange)="atualizarUsuario(usuario)" slot="end" [(ngModel)]="usuario.permissoes.farmacia"></ion-checkbox>
-              </ion-item>
-              <ion-item>
-                <strong>Logs</strong>
-                <ion-checkbox (ionChange)="atualizarUsuario(usuario)"  slot="end" [(ngModel)]="usuario.permissoes.logs"></ion-checkbox>
               </ion-item>
               <ion-item>
                 <strong>Pedidos</strong>

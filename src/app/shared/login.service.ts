@@ -8,7 +8,7 @@ import { Usuario } from './usuario';
   providedIn: 'root'
 })
 export class LoginService {
-
+  private _storage: Storage | null = null;
   private url = 'http://localhost:3000/usuarios';
   usuario:Usuario;
   constructor(

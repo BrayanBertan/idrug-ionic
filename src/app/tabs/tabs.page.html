@@ -1,27 +1,27 @@
 <ion-tabs>
 
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="farmacia">
+    <ion-tab-button [disabled]="!usuario.permissoes.farmacia" tab="farmacia">
       <ion-icon name="storefront-outline"></ion-icon>
       <ion-label>Farmacia</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="produtos">
+    <ion-tab-button [disabled]="!usuario.permissoes.produtos" tab="produtos">
       <ion-icon name="pricetags-outline"></ion-icon>
       <ion-label>Produtos</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="pedidos">
+    <ion-tab-button [disabled]="!usuario.permissoes.pedidos" tab="pedidos">
       <ion-icon name="cart-outline"></ion-icon>
       <ion-label>Pedidos</ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="permissoes">
+    <ion-tab-button [disabled]="!usuario.permissoes.permissoes" tab="permissoes">
       <ion-icon name="people-outline"></ion-icon>
       <ion-label>Permissões</ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="logs">
-      <ion-icon name="list-outline"></ion-icon>
-      <ion-label>Logs</ion-label>
+    <ion-tab-button (click)="logOut()">
+      <ion-icon name="log-out-outline"></ion-icon>
+      <ion-label>Sair</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 

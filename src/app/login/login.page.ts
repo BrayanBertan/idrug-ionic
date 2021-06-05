@@ -61,7 +61,6 @@ export class LoginPage implements OnInit {
     const usuario = this.loginForm.value;
     this.loginService.loginUsuario(usuario.usuario,usuario.senha).subscribe(
       value => {
-        console.log(value);
         if(value['length'] == 0){
           this.toastController.create({
             message: `Dados incorretos`,
@@ -71,7 +70,7 @@ export class LoginPage implements OnInit {
           }).then(t => t.present());
         }
         else{
-          this.loginService.setUsuario(usuario);
+          this.loginService.setUsuario(value);
           this.router.navigate(['']);
         }
       },
