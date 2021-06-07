@@ -123,6 +123,71 @@
         "permissoes": true
       },
       "id": 2
+    },
+    {
+      "nome": "ssss",
+      "usuario": "ssdd",
+      "senha": "dsss",
+      "foto": "https://www.pngjoy.com/pngm/136/2750635_gray-circle-login-user-icon-png-transparent-png.png",
+      "permissoes": {
+        "farmacia": false,
+        "produtos": false,
+        "pedidos": false,
+        "logs": false
+      },
+      "id": 3
+    },
+    {
+      "nome": "asdsadasd",
+      "usuario": "asdsa",
+      "senha": "aassa",
+      "foto": "https://www.pngjoy.com/pngm/136/2750635_gray-circle-login-user-icon-png-transparent-png.png",
+      "permissoes": {
+        "farmacia": false,
+        "produtos": false,
+        "pedidos": false,
+        "logs": false
+      },
+      "id": 4
+    },
+    {
+      "nome": "sadsad",
+      "usuario": "asdsad",
+      "senha": "sadsad",
+      "foto": "https://www.pngjoy.com/pngm/136/2750635_gray-circle-login-user-icon-png-transparent-png.png",
+      "permissoes": {
+        "farmacia": false,
+        "produtos": false,
+        "pedidos": false,
+        "logs": false
+      },
+      "id": 5
+    },
+    {
+      "nome": "111",
+      "usuario": "123",
+      "senha": "123",
+      "foto": "https://www.pngjoy.com/pngm/136/2750635_gray-circle-login-user-icon-png-transparent-png.png",
+      "permissoes": {
+        "farmacia": false,
+        "produtos": false,
+        "pedidos": false,
+        "logs": false
+      },
+      "id": 6
+    },
+    {
+      "nome": "1234",
+      "usuario": "1234",
+      "senha": "1234",
+      "foto": "https://www.pngjoy.com/pngm/136/2750635_gray-circle-login-user-icon-png-transparent-png.png",
+      "permissoes": {
+        "farmacia": true,
+        "produtos": true,
+        "pedidos": true,
+        "permissoes": false
+      },
+      "id": 7
     }
   ],
   "pedidos": [

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { LoginService } from '../shared/login.service';
 import { Usuario } from '../shared/usuario';
@@ -19,7 +19,8 @@ export class CadastroPage implements OnInit {
   constructor(
     private toastController: ToastController,
     private loginService: LoginService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router:Router
   ) {
 
     let usuario={
@@ -87,10 +88,11 @@ export class CadastroPage implements OnInit {
 
   salvar() {
     const usuario = {...this.cadastroForm.value,permissoes:{
-      "farmacia":false,
-      "produtos":false,
-      "pedidos":false,
-      "logs":false
+      "farmacia":true,
+      "produtos":true,
+      "pedidos":true,
+      "permissoes":false,
+
 
     }};
     this.loginService.salvar(usuario).subscribe(
@@ -101,6 +103,7 @@ export class CadastroPage implements OnInit {
           keyboardClose: true,
           color: 'success'
         }).then(t => t.present());
+        this.router.navigate(['']);
       },
       erro => {
         console.error(erro);
