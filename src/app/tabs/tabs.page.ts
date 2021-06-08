@@ -30,7 +30,7 @@ export class TabsPage  implements OnInit {
 
   checkUsuario(){
     if(this.loginService.isAuth())
-    this.usuario = this.loginService.usuario[0];
+    this.usuario = this.loginService.usuario;
   else
     this.router.navigate(['login']);
   console.log(this.usuario,'usuario');

@@ -25,7 +25,7 @@ export class LoginPage implements OnInit {
 
     let usuario={
       usuario:"",
-      senha:""
+      senha:"",
     };
     this.initializaFormulario(usuario);
 
@@ -70,7 +70,8 @@ export class LoginPage implements OnInit {
           }).then(t => t.present());
         }
         else{
-          this.loginService.setUsuario(value);
+          console.log(value[0]),'test';
+          this.loginService.setUsuario(value[0]);
           this.router.navigate(['']);
         }
       },

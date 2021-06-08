@@ -12,6 +12,7 @@ export class PermissoesPage implements OnInit {
 
   usuarios:Usuario[];
   emptyList:String = "../../assets/note.png";
+  usuarioLogado:Usuario;
 
 
   constructor(
@@ -23,6 +24,7 @@ export class PermissoesPage implements OnInit {
 
   ngOnInit() {
     this.usuarios = [];
+    this.getUsuario();
   }
 
 
@@ -34,6 +36,11 @@ export class PermissoesPage implements OnInit {
      (error)=> console.error(error),
    );
  }
+
+ getUsuario(){
+  this.usuarioLogado = this.loginService.usuario;
+  console.log(this.usuarioLogado.id,'iddddd');
+}
 
   refreshUsuarios(){
      this.loginService.getUsuarios().subscribe(

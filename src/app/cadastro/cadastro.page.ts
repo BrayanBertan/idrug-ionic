@@ -98,7 +98,7 @@ export class CadastroPage implements OnInit {
     this.loginService.salvar(usuario).subscribe(
       value => {
         this.toastController.create({
-          message: `usuario ${usuario.nome} atualizada com sucesso`,
+          message: `usuario ${usuario.nome} criado com sucesso`,
           duration: 5000,
           keyboardClose: true,
           color: 'success'
