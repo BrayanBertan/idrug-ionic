@@ -1,7 +1,7 @@
 {
   "farmacia": [
     {
-      "nome": "Farmacia teste",
+      "nome": "Farmacia 233",
       "sobre": "Uma Farmacia",
       "endereco": "Rua tal",
       "telefone": "34349999",
@@ -12,7 +12,7 @@
       "aceitos": [
         {
           "val": "Cartão de credito",
-          "isChecked": true,
+          "isChecked": false,
           "logo": "../../assets/credit-card.png"
         },
         {
@@ -55,7 +55,7 @@
       "unidade": "Comprimido",
       "estoque": 0,
       "foto": "../../assets/produtos.png",
-      "id": 2
+      "id": 8
     },
     {
       "nome": "sad",
@@ -83,17 +83,11 @@
       "nome": "adadasd",
       "descricao": "adadssdsd",
       "categoria": "Relaxante Muscular",
-      "preco": 0,
-      "volume": "0",
+      "preco": "3",
+      "volume": "5",
       "unidade": "Comprimido",
-      "estoque": 0,
+      "estoque": 12,
       "foto": "../../assets/produtos.png",
-      "permissoes": {
-        "farmacia": false,
-        "produtos": false,
-        "pedidos": false,
-        "logs": false
-      },
       "id": 5
     }
   ],
@@ -107,7 +101,7 @@
         "farmacia": true,
         "produtos": true,
         "pedidos": true,
-        "permissoes": true
+        "permissoes": false
       },
       "id": 1
     },
@@ -118,9 +112,9 @@
       "foto": "https://www.pngjoy.com/pngm/136/2750635_gray-circle-login-user-icon-png-transparent-png.png",
       "permissoes": {
         "farmacia": true,
-        "produtos": true,
-        "pedidos": false,
-        "permissoes": true
+        "produtos": false,
+        "pedidos": true,
+        "permissoes": false
       },
       "id": 2
     },
@@ -157,7 +151,7 @@
       "usuario": "Kyo",
       "modo_pagamento": "Boleto",
       "endereco": "Rua tal",
-      "status": "1",
+      "status": "0",
       "itens": [
         {
           "id": 1,
@@ -167,6 +161,15 @@
           "preco_unitario": 5,
           "foto": "https://www.drogariaminasbrasil.com.br/media/product/b50/analgesico-dorflex-24-comprimidos-aab.jpg",
           "nome": "Dorflex"
+        },
+        {
+          "id": 2,
+          "pedido": 5,
+          "produto": 8,
+          "quantidade": 5,
+          "preco_unitario": 5,
+          "foto": "../../assets/produtos.png",
+          "nome": "Item 2"
         }
       ],
       "total": 25

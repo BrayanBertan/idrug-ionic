@@ -5,6 +5,7 @@ import { ToastController } from '@ionic/angular';
 import { Farmacia } from './../shared/Farmacia';
 import { ModoPagamento } from '../shared/modo-pagamento';
 import { Router } from '@angular/router';
+import { ValueAccessor } from '@ionic/angular/directives/control-value-accessors/value-accessor';
 
 @Component({
   selector: 'app-farmacia',
@@ -37,7 +38,10 @@ export class FarmaciaPage implements OnInit {
       email:"",
       logo:"https://img2.gratispng.com/20180331/yzq/kisspng-pharmacy-logo-pharmacist-pharmaceutical-drug-pharmacy-5abf3058c52fd8.1225652515224791928077.jpg",
       cnpj:"",
-      aceitos:[]
+      credito:true,
+      debito:false,
+      boleto:true,
+      pix:true
     };
     this.initializaFormulario(farmacia);
 
@@ -110,7 +114,15 @@ export class FarmaciaPage implements OnInit {
   ngOnInit() {
       this.farmaciaService
         .getFarmacia()
-        .subscribe((farmacia) => {this.initializaFormulario(farmacia[0]);this.modos_pagamento = farmacia[0].aceitos}
+        .subscribe((farmacia) => {
+        
+          this.initializaFormulario(farmacia[0]);
+          this.modos_pagamento[0].isChecked = farmacia[0].credito; 
+          this.modos_pagamento[1].isChecked = farmacia[0].debito; 
+          this.modos_pagamento[2].isChecked = farmacia[0].boleto; 
+          this.modos_pagamento[3].isChecked = farmacia[0].pix; 
+          //this.modos_pagamento = farmacia[0].aceitos
+        }
         );
 
 
@@ -118,7 +130,14 @@ export class FarmaciaPage implements OnInit {
 
 
   salvar() {
-    const farmacia = {...this.farmaciasForm.value,aceitos:this.modos_pagamento};
+   // this.modos_pagamento.forEach(item => console.log(item.isChecked,'checked'));
+  
+    const farmacia = {...this.farmaciasForm.value,
+      credito:this.modos_pagamento[0].isChecked,
+      debito:this.modos_pagamento[1].isChecked,
+      boleto:this.modos_pagamento[2].isChecked,
+      pix:this.modos_pagamento[3].isChecked
+    };
     this.farmaciaService.atualizar(farmacia).subscribe(
       value => {
         this.toastController.create({
@@ -144,3 +163,5 @@ export class FarmaciaPage implements OnInit {
 
 
 }
+
+

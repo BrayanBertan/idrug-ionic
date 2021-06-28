@@ -24,7 +24,7 @@
         <ion-item>
           <ion-label position="floating">Senha: </ion-label>
           <ion-input formControlName="senha"
-                     type="text">
+                     type="password">
           </ion-input>
           <ion-text color="danger" *ngIf="senha.errors">
             <small *ngIf="senha.errors.required && (senha.dirty || senha.touched)">

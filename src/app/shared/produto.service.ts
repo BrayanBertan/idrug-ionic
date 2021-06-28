@@ -8,7 +8,7 @@ import { Produto } from './produto';
 })
 export class ProdutoService {
 
-  private url = 'http://localhost:3000/produtos';
+  private url = 'http://localhost:8080/idrug-api-1.0.0/api/produtos';
   constructor(
     private httpCliente:HttpClient
   ) {

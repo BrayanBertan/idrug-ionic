@@ -9,7 +9,7 @@ import { Usuario } from './usuario';
 })
 export class LoginService {
   private _storage: Storage | null = null;
-  private url = 'http://localhost:3000/usuarios';
+  private url =  'http://localhost:8080/idrug-api-1.0.0/api/usuarios';
   usuario:Usuario;
   constructor(
     private httpCliente:HttpClient,
@@ -46,6 +46,12 @@ export class LoginService {
 
   public setUsuario(usuario:Usuario){
     this.usuario = usuario;
+    this.usuario.permissoes = {
+      "farmacia":true,
+      "produtos":true,
+      "pedidos":true,
+      "permissoes":false
+    };
 }
 
 

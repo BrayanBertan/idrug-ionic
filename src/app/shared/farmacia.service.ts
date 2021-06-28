@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class FarmaciaService {
 
-  private url = 'http://localhost:3000/farmacia';
+  private url = 'http://localhost:8080/idrug-api-1.0.0/api/farmacias';
   constructor(
     private httpCliente:HttpClient
   ) {

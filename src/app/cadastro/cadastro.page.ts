@@ -87,14 +87,16 @@ export class CadastroPage implements OnInit {
 
 
   salvar() {
-    const usuario = {...this.cadastroForm.value,permissoes:{
-      "farmacia":true,
-      "produtos":true,
-      "pedidos":true,
-      "permissoes":false,
+    // const usuario = {...this.cadastroForm.value,permissoes:{
+    //   "farmacia":true,
+    //   "produtos":true,
+    //   "pedidos":true,
+    //   "permissoes":false,
 
 
-    }};
+    // }};
+    const usuario = this.cadastroForm.value;
+    delete usuario.permissoes;
     this.loginService.salvar(usuario).subscribe(
       value => {
         this.toastController.create({
