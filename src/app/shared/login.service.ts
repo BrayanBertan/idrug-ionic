@@ -50,7 +50,7 @@ export class LoginService {
       "farmacia":true,
       "produtos":true,
       "pedidos":true,
-      "permissoes":false
+      "permissoes":true
     };
 }
 
